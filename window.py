@@ -19,19 +19,26 @@ clock = pygame.time.Clock()
 window = pygame.display.set_mode(DISPLAY_MODE)
 pygame.display.set_caption("My Window :)")
 
+
 class Sprite:
 
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.width=50
-        self.height=50
+        self.width = 50
+        self.height = 50
 
     def render(self):
 
-        pygame.draw.rect(window, BLACK, (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(
+            window,
+            BLACK,
+            (self.x,
+                self.y,
+                self.width,
+                self.height))
 
-player=Sprite(200,200)
+player = Sprite(200, 200)
 
 gameLoop = True
 
