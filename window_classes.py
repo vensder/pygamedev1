@@ -8,11 +8,6 @@ FPS = 50
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-STOP = 0
-RUN = 1
-RIGHT = 1
-LEFT = 2
-
 x, y = 0, 0
 moveX, moveY = 0, 0
 step = 5
@@ -25,15 +20,15 @@ pygame.display.set_caption("Class Sprite")
 
 class Sprite:
 
+    RIGHT = 1
+    LEFT = 2
+    STOP = 0
+    RUN = 1
+
     def __init__(self, x, y):
 
-        RIGHT = 1
-        LEFT = 2
-        STOP = 0
-        RUN = 1
-
-        self.currentDirection = RIGHT
-        self.movement = STOP
+        self.currentDirection = Sprite.RIGHT
+        self.movement = Sprite.STOP
 
         self.x = x
         self.y = y
@@ -53,9 +48,9 @@ class Sprite:
 
         if self.timeNumber == self.timeTarget:
 
-            if self.currentImage == 1 and self.movement == RUN:
+            if self.currentImage == 1 and self.movement == Sprite.RUN:
                 self.currentImage = 2  # += 1 (if we have more then 2 images
-            elif self.currentImage == 2 and self.movement == RUN:
+            elif self.currentImage == 2 and self.movement == Sprite.RUN:
                 self.currentImage = 1
 
             self.timeNumber = 0
@@ -65,14 +60,14 @@ class Sprite:
     def render(self):
 
         if self.currentImage == 1:
-            if self.currentDirection == RIGHT:
+            if self.currentDirection == Sprite.RIGHT:
                 window.blit(self.image1_right, (self.x, self.y))
-            elif self.currentDirection == LEFT:
+            elif self.currentDirection == Sprite.LEFT:
                 window.blit(self.image1_left, (self.x, self.y))
         else:
-            if self.currentDirection == RIGHT:
+            if self.currentDirection == Sprite.RIGHT:
                 window.blit(self.image2_right, (self.x, self.y))
-            elif self.currentDirection == LEFT:
+            elif self.currentDirection == Sprite.LEFT:
                 window.blit(self.image2_left, (self.x, self.y))
 
 player1 = Sprite(0, 0)
@@ -87,33 +82,33 @@ while gameLoop:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                player1.currentDirection = LEFT
-                player1.movement = RUN
+                player1.currentDirection = player1.LEFT
+                player1.movement = player1.RUN
                 moveX = -step
             if event.key == pygame.K_RIGHT:
-                player1.currentDirection = RIGHT
-                player1.movement = RUN
+                player1.currentDirection = player1.RIGHT
+                player1.movement = player1.RUN
                 moveX = step
             if event.key == pygame.K_UP:
-                player1.movement = RUN
+                player1.movement = player1.RUN
                 moveY = -step
             if event.key == pygame.K_DOWN:
-                player1.movement = RUN
+                player1.movement = player1.RUN
                 moveY = step
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 moveX = 0
-                player1.movement = STOP
+                player1.movement = player1.STOP
             if event.key == pygame.K_RIGHT:
                 moveX = 0
-                player1.movement = STOP
+                player1.movement = player1.STOP
             if event.key == pygame.K_UP:
                 moveY = 0
-                player1.movement = STOP
+                player1.movement = player1.STOP
             if event.key == pygame.K_DOWN:
                 moveY = 0
-                player1.movement = STOP
+                player1.movement = player1.STOP
 
     window.fill(WHITE)
 
