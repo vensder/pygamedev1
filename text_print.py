@@ -18,9 +18,9 @@ WHITE = (255, 255, 255)
 pygame.init()
 pygame.font.init()
 
-clock = pygame.time.Clock()
-window = pygame.display.set_mode(DISPLAY_MODE)
-pygame.display.set_caption("Keyboard")
+# clock = pygame.time.Clock()
+window = pygame.display.set_mode(DISPLAY_MODE, 0, 32)
+pygame.display.set_caption("Print the text")
 
 FONT = pygame.font.SysFont("monospace", 40)
 SURFASEFONT = FONT.render("Hello from PyGame!", True, BLACK, GRAY)
@@ -37,7 +37,8 @@ while gameLoop:
         if event.type == pygame.QUIT:
             gameLoop = False
 
-    #clock.tick(FPS)
+#    clock.tick(FPS)
     pygame.display.update()
 
 pygame.quit()
+sys.exit()
