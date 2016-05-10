@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pygame
+import sys
 
 WIDTH = 800
 HEIGHT = 600
@@ -22,7 +23,7 @@ pygame.font.init()
 window = pygame.display.set_mode(DISPLAY_MODE, 0, 32)
 pygame.display.set_caption("Print the text")
 
-FONT = pygame.font.SysFont("monospace", 40)
+FONT = pygame.font.SysFont("Monospace", 40)
 SURFASEFONT = FONT.render("Hello from PyGame!", True, BLACK, GRAY)
 SURFACER = SURFASEFONT.get_rect()
 SURFACER.center = (300, 200)
