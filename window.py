@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import pygame
@@ -103,7 +103,7 @@ while gameLoop:
     player.y += moveY
 
     pygame.draw.rect(window, (R, G, B), (x, y, 50, 50))
-    print R, G, B
+    print (R, G, B)
     clock.tick(FPS)
 
     pygame.display.flip()
