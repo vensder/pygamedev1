@@ -62,7 +62,7 @@ while True:
     if totalframes > FPS * 7:
         screen.blit(img_python, (SCREENWIDTH // 2 - 128, SCREENHEIGHT // 2 - 128))
     if totalframes > FPS * 8:
-        pygame.draw.circle(screen, green, (SCREENWIDTH / 2, SCREENHEIGHT / 2), SCREENHEIGHT // 6, 2)
+        pygame.draw.circle(screen, green, (SCREENWIDTH // 2, SCREENHEIGHT // 2), SCREENHEIGHT // 6, 2)
     if totalframes > FPS * 9:
         screen.blit(img_tux, (SCREENWIDTH // 2 - 64, SCREENHEIGHT // 2 - 64))
         #screen.fill(green)
