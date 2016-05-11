@@ -34,10 +34,10 @@ class Sprite:
         self.y = y
         self.width = 90
         self.height = 105
-        self.image1_right = pygame.image.load('img/mario1_right.png')
-        self.image2_right = pygame.image.load('img/mario2_right.png')
-        self.image1_left = pygame.image.load('img/mario1_left.png')
-        self.image2_left = pygame.image.load('img/mario2_left.png')
+        self.image1_right = pygame.image.load('img/mario1_right.png').convert_alpha()
+        self.image2_right = pygame.image.load('img/mario2_right.png').convert_alpha()
+        self.image1_left = pygame.image.load('img/mario1_left.png').convert_alpha()
+        self.image2_left = pygame.image.load('img/mario2_left.png').convert_alpha()
         self.timeTarget = 5
         self.timeNumber = 0
         self.currentImage = 1
