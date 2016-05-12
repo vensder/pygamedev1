@@ -8,10 +8,10 @@ from process import process
 
 # print sys.version
 
-SCREENWIDTH, SCREENHEIGHT = 640, 480
+WIDTH, HEIGHT = 640, 480
 
 pygame.init()
-screen = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT), 0, 32)
+screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
 
 img_python = pygame.image.load("img/python.png").convert_alpha() # .convert_alpha()
 img_tux = pygame.image.load("img/tux.png").convert_alpha() # .convert_alpha()
@@ -27,8 +27,8 @@ FPS = 48
 totalframes = 0
 
 tux = Tux(0, 0, 128, 128, "img/tux.png")
-tux2 = Tux(0, SCREENHEIGHT // 2, 128, 128, "img/tux.png")
-pump = Pump(SCREENWIDTH - 256, SCREENHEIGHT - 256, 256, 256, "img/pumpkin.png")
+tux2 = Tux(0, HEIGHT // 2, 128, 128, "img/tux.png")
+pump = Pump(WIDTH - 256, HEIGHT - 256, 256, 256, "img/pumpkin.png")
 
 # ----------------- Main Program Loop -----------------
 while True:
@@ -48,23 +48,23 @@ while True:
     BaseClass.allsprites.draw(screen)
     
     if totalframes > FPS * 1:
-        pygame.draw.line(screen, blue, (0, 0), (SCREENWIDTH, SCREENHEIGHT), 1)
+        pygame.draw.line(screen, blue, (0, 0), (WIDTH, HEIGHT), 1)
     if totalframes > FPS * 2:
-        pygame.draw.line(screen, blue, (SCREENWIDTH, 0), (0, SCREENHEIGHT), 1)
+        pygame.draw.line(screen, blue, (WIDTH, 0), (0, HEIGHT), 1)
     if totalframes > FPS * 3:
-        pygame.draw.rect(screen, green, (SCREENWIDTH / 3.0, SCREENHEIGHT / 3.0, SCREENWIDTH / 3.0, SCREENHEIGHT / 3.0))
+        pygame.draw.rect(screen, green, (WIDTH / 3.0, HEIGHT / 3.0, WIDTH / 3.0, HEIGHT / 3.0))
     if totalframes > FPS * 4:
-        pygame.draw.rect(screen, blue, (SCREENWIDTH * 0.375, SCREENHEIGHT * 0.375, SCREENWIDTH / 4.0, SCREENHEIGHT // 4))
+        pygame.draw.rect(screen, blue, (WIDTH * 0.375, HEIGHT * 0.375, WIDTH / 4.0, HEIGHT // 4))
     if totalframes > FPS * 5:
-        pygame.draw.rect(screen, green, (SCREENWIDTH * 0.4, SCREENHEIGHT * 0.4, SCREENWIDTH // 5, SCREENHEIGHT // 5))
+        pygame.draw.rect(screen, green, (WIDTH * 0.4, HEIGHT * 0.4, WIDTH // 5, HEIGHT // 5))
     if totalframes > FPS * 6:
-        pygame.draw.rect(screen, blue, (SCREENWIDTH * (1 / 2.0 - 1 / 12.0), SCREENHEIGHT * (1 / 2.0 - 1 / 12.0), SCREENWIDTH // 6, SCREENHEIGHT // 6))
+        pygame.draw.rect(screen, blue, (WIDTH * (1 / 2.0 - 1 / 12.0), HEIGHT * (1 / 2.0 - 1 / 12.0), WIDTH // 6, HEIGHT // 6))
     if totalframes > FPS * 7:
-        screen.blit(img_python, (SCREENWIDTH // 2 - 128, SCREENHEIGHT // 2 - 128))
+        screen.blit(img_python, (WIDTH // 2 - 128, HEIGHT // 2 - 128))
     if totalframes > FPS * 8:
-        pygame.draw.circle(screen, green, (SCREENWIDTH // 2, SCREENHEIGHT // 2), SCREENHEIGHT // 6, 2)
+        pygame.draw.circle(screen, green, (WIDTH // 2, HEIGHT // 2), HEIGHT // 6, 2)
     if totalframes > FPS * 9:
-        screen.blit(img_tux, (SCREENWIDTH // 2 - 64, SCREENHEIGHT // 2 - 64))
+        screen.blit(img_tux, (WIDTH // 2 - 64, HEIGHT // 2 - 64))
         #screen.fill(green)
     if totalframes > FPS * 10:
         totalframes = 0
